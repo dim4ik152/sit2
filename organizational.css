@@ -1,0 +1,209 @@
+/* =========================
+   Organizational consulting
+   (page-specific styles)
+========================= */
+
+.org-main{
+  --s1: rgba(56,189,248,.07);
+  --s2: rgba(20,184,166,.08);
+  --sx1: 14%; --sy1: 18%;
+  --sx2: 86%; --sy2: 22%;
+}
+
+/* Layout */
+.org-grid{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* LEFT */
+.org-left{
+  padding: 26px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.72));
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: var(--shadow-2);
+}
+
+.org-lead{
+  margin-top: 12px;
+  max-width: 74ch;
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(15,23,42,.66);
+}
+
+.org-points{
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.org-point{
+  padding-top: 14px;
+  border-top: 1px solid rgba(15,23,42,.08);
+}
+
+.org-point-title{
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .10em;
+  color: rgba(15,23,42,.55);
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.org-list{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(15,23,42,.72);
+  line-height: 1.7;
+}
+.org-list li{ margin: 8px 0; }
+
+/* CTA */
+.org-cta{
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 22px;
+  background:
+    radial-gradient(800px 260px at 10% 0%, rgba(14,165,168,.16), transparent 55%),
+    radial-gradient(800px 260px at 90% 0%, rgba(56,189,248,.14), transparent 55%),
+    rgba(255,255,255,.74);
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: var(--shadow-1);
+}
+
+.org-cta h3{
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.org-cta p{
+  margin-top: 10px;
+  color: rgba(15,23,42,.66);
+  line-height: 1.7;
+}
+
+.org-cta .btn{ margin-top: 12px; }
+
+/* RIGHT */
+.org-right{
+  padding: 26px;
+  border-radius: 28px;
+  background: rgba(255,255,255,.74);
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: var(--shadow-2);
+  position: sticky;
+  top: 92px;
+}
+
+.org-faq-subtitle{
+  margin-top: 0;
+  color: rgba(15,23,42,.62);
+  line-height: 1.7;
+}
+
+/* FAQ accordion */
+.org-faq{
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.org-faq-item{
+  border-radius: 18px;
+  border: 1px solid rgba(15,23,42,.10);
+  background: rgba(246,248,251,.72);
+  box-shadow: 0 10px 26px rgba(2,8,23,.05);
+  overflow: hidden;
+  transition: transform 220ms var(--ease), box-shadow 220ms var(--ease), border-color 220ms var(--ease);
+}
+
+.org-faq-item:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(2,8,23,.08);
+  border-color: rgba(14,165,168,.22);
+}
+
+.org-faq-q{
+  list-style: none;
+  cursor: pointer;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 800;
+  color: rgba(15,23,42,.90);
+}
+
+.org-faq-q::-webkit-details-marker{ display: none; }
+
+/* plus / minus */
+.org-faq-q::after{
+  content:"+";
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: rgba(15,23,42,.70);
+  background: linear-gradient(135deg, rgba(20,184,166,.18), rgba(56,189,248,.18));
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 10px 24px rgba(14,165,168,.10);
+  transition: transform 220ms var(--ease);
+}
+
+.org-faq-item[open] .org-faq-q::after{
+  content:"–";
+  transform: rotate(90deg);
+}
+
+.org-faq-a{
+  padding: 0 16px 16px;
+  color: rgba(15,23,42,.66);
+  line-height: 1.7;
+  animation: orgFaqIn 240ms var(--ease) both;
+}
+
+.org-faq-a ul{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: rgba(15,23,42,.70);
+}
+
+.org-faq-a li{ margin: 8px 0; }
+.org-faq-a strong{ color: rgba(15,23,42,.72); font-weight: 900; }
+
+@keyframes orgFaqIn{
+  from{ opacity: 0; transform: translateY(-6px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+/* footer */
+.org-faq-footer{
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(15,23,42,.08);
+}
+
+.org-faq-footer p{
+  color: rgba(15,23,42,.62);
+  line-height: 1.7;
+}
+
+.org-faq-footer .btn{
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .org-grid{ grid-template-columns: 1fr; }
+  .org-right{ position: static; }
+}

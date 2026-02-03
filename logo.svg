@@ -1,0 +1,11 @@
+<svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="sea" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0ea5a8"></stop>
+      <stop offset="1" stop-color="#38bdf8"></stop>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="26" stroke="url(#sea)" stroke-width="4"></circle>
+  <circle cx="32" cy="32" r="14" stroke="rgba(14,165,168,.55)" stroke-width="3"></circle>
+  <circle cx="32" cy="32" r="6" stroke="rgba(56,189,248,.55)" stroke-width="3"></circle>
+</svg>
