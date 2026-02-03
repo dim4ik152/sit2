@@ -1098,8 +1098,23 @@ input:focus, textarea:focus, select:focus{
 
 /* Responsive (about) */
 @media (max-width: 980px){
-  .about-hero-inner{ grid-template-columns: 1fr; }
-  .about-hero-photo{ justify-self: start; width: min(520px, 100%); }
+  /* Структура блока «Обо мне» и страниц услуг (therapy/coaching/consulting) на мобильных устройствах */
+  .about-hero-inner{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  /* Фотография выводится первой и занимает всю ширину */
+  .about-hero-photo{
+    order: 1;
+    width: 100%;
+    justify-self: unset;
+    display: flex;
+    justify-content: center;
+  }
+  .about-hero-text{
+    order: 2;
+  }
 
   .about-grid{ grid-template-columns: 1fr; }
   .principles{ grid-template-columns: 1fr; }
